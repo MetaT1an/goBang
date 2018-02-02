@@ -70,7 +70,7 @@ public class GameModel {
     }
     public boolean leftR(int i,int j){
         int cx = 0;
-        for(int m=i+1,n=j+1;m<N && n<6 && board[m][n]==board[i][j];++m,++n)
+        for(int m=i+1,n=j+1;m<N && n<N && board[m][n]==board[i][j];++m,++n)
             cx++;
         for(int m=i-1,n=j-1;m>=0 && n>=0 && board[m][n]==board[i][j];--m,--n)
             cx++;
