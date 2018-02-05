@@ -76,11 +76,11 @@ public class ConsoleControl {
     private static void stepFunction(){
         console.getStep(0).setOnAction(event ->{
             chessPiecesList.subPoint();
-            ChessBoardControl.drawPieceAccordingIndex(chessPiecesList.PointValue(),chessPiecesList);
+            ChessBoardControl.drawPieceAccordingIndex(chessPiecesList.pointValue(),chessPiecesList);
         });
         console.getStep(1).setOnAction(event -> {
             chessPiecesList.addPoint();
-            ChessBoardControl.drawPieceAccordingIndex(chessPiecesList.PointValue(),chessPiecesList);
+            ChessBoardControl.drawPieceAccordingIndex(chessPiecesList.pointValue(),chessPiecesList);
         });
     }
 

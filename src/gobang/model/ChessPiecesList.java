@@ -33,7 +33,7 @@ public class ChessPiecesList {
         point = (point - 1 < 0) ? -1 : point - 1;
     }
 
-    public int PointValue(){
+    public int pointValue(){
         return point;
     }
 
