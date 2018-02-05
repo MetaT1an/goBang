@@ -1,4 +1,4 @@
-package goBang.model;
+package gobang.model;
 
 /**
  * this class is intended to maintain the basic rules of the game
@@ -12,7 +12,7 @@ public class GameModel {
     private boolean status;
 
     public static final int N = 15;
-    public static GameModel gameModel = null;
+    private static GameModel gameModel = null;
 
     /*
     singleton patterns makes it possible for different
@@ -38,7 +38,7 @@ public class GameModel {
         return isBlack;
     }
     //shift to the other side to play game
-    public void inTurn(){
+    private void inTurn(){
         this.isBlack = !this.isBlack;
     }
 
@@ -52,35 +52,45 @@ public class GameModel {
         return status;
     }
 
-    public boolean line(int i,int j){
+    private boolean line(int i,int j){
         int cx = 0;
-        for(int m =i+1;m<N && board[m][j]==board[i][j];++m)
+        int m;
+
+        for(m = i + 1; m < N && board[m][j] == board[i][j]; ++m)
             cx++;
-        for(int m = i-1;m>=0 && board[m][j]==board[i][j];--m)
+        for(m = i - 1; m >= 0 && board[m][j] == board[i][j]; --m)
+            cx++;
+        return cx >= 4;
+    }
+    private boolean column(int i,int j){
+        int cx = 0;
+        int n;
+
+        for(n = j + 1; n < N && board[i][n] == board[i][j]; ++n)
+            cx++;
+        for(n = j - 1; n >= 0 && board[i][n] == board[i][j]; --n)
+            cx++;
+        return cx >= 4;
+    }
+    private boolean leftR(int i,int j){
+        int cx = 0;
+        int m;
+        int n;
+
+        for(m=i+1,n=j+1; m<N && n<N && board[m][n]==board[i][j];++m,++n)
+            cx++;
+        for(m=i-1,n=j-1;m>=0 && n>=0 && board[m][n]==board[i][j];--m,--n)
             cx++;
         return cx>=4;
     }
-    public boolean column(int i,int j){
+    private boolean rightL(int i,int j){
         int cx = 0;
-        for(int n =j+1;n<N && board[i][n]==board[i][j];++n)
+        int m;
+        int n;
+
+        for(m=i-1,n=j+1;m>=0 && n<N && board[m][n]==board[i][j];--m,++n)
             cx++;
-        for(int n = j-1;n>=0 && board[i][n]==board[i][j];--n)
-            cx++;
-        return cx>=4;
-    }
-    public boolean leftR(int i,int j){
-        int cx = 0;
-        for(int m=i+1,n=j+1;m<N && n<N && board[m][n]==board[i][j];++m,++n)
-            cx++;
-        for(int m=i-1,n=j-1;m>=0 && n>=0 && board[m][n]==board[i][j];--m,--n)
-            cx++;
-        return cx>=4;
-    }
-    public boolean rightL(int i,int j){
-        int cx = 0;
-        for(int m=i-1,n=j+1;m>=0 && n<N && board[m][n]==board[i][j];--m,++n)
-            cx++;
-        for(int m=i+1,n=j-1;m<N && n>=0 && board[m][n]==board[i][j];++m,--n)
+        for(m=i+1,n=j-1;m<N && n>=0 && board[m][n]==board[i][j];++m,--n)
             cx++;
         return cx>=4;
     }

@@ -1,7 +1,7 @@
-package goBang.ui;
+package gobang.ui;
 
-import goBang.control.ChessBoardControl;
-import goBang.control.ConsoleControl;
+import gobang.control.ChessBoardControl;
+import gobang.control.ConsoleControl;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;

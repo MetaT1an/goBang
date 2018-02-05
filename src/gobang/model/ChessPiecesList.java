@@ -1,4 +1,4 @@
-package goBang.model;
+package gobang.model;
 
 import java.util.ArrayList;
 

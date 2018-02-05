@@ -1,4 +1,4 @@
-package goBang.model;
+package gobang.model;
 
 import javafx.scene.paint.Color;
 

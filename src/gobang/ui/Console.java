@@ -1,4 +1,4 @@
-package goBang.ui;
+package gobang.ui;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;

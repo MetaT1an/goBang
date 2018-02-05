@@ -1,9 +1,9 @@
-package goBang.control;
+package gobang.control;
 
-import goBang.model.ChessPiece;
-import goBang.model.ChessPiecesList;
-import goBang.model.GameModel;
-import goBang.ui.ChessBoard;
+import gobang.model.ChessPiece;
+import gobang.model.ChessPiecesList;
+import gobang.model.GameModel;
+import gobang.ui.ChessBoard;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 

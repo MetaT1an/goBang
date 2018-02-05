@@ -1,4 +1,4 @@
-# goBang  
+# gobang
 > also called **Gomoku** or **Five in a Row**, is an abstract strategy board game.  
 
 - 初始界面  
